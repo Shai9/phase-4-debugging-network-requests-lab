@@ -12,6 +12,7 @@ class ToysController < ApplicationController
   end
 
   def update
+    #since we were getting a json end of input...we had to render the toy in json
     toy = Toy.find_by(id: params[:id])
     toy.update(toy_params)
     render json: toy
